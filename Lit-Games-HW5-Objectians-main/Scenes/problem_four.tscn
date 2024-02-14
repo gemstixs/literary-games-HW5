@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cj1vyr6kvr67l" path="res://Scenes/crate.tscn" id="4_onmak"]
 [ext_resource type="Texture2D" uid="uid://duqvx7htykro6" path="res://Art/tree.png" id="5_gwuyb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwru5"]
-size = Vector2(95.7111, 91.3729)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4tdo"]
+size = Vector2(323.389, 323.389)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_amvju")
@@ -20,14 +20,14 @@ collision_mask = 3
 script = ExtResource("2_p8r5b")
 movement_speed = 150.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-0.00012207, -6.10352e-05)
-scale = Vector2(0.999999, 1)
-shape = SubResource("RectangleShape2D_wwru5")
-
 [node name="ParentLogo" type="Sprite2D" parent="CharacterBody2D"]
 scale = Vector2(0.747742, 0.713851)
 texture = ExtResource("3_apj2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-6.10352e-05, 0)
+scale = Vector2(0.295962, 0.282548)
+shape = SubResource("RectangleShape2D_n4tdo")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("3_goot7")
@@ -52,9 +52,11 @@ Fix the scene so everything is right."
 
 [node name="Crate2" parent="." instance=ExtResource("4_onmak")]
 position = Vector2(376, 376)
+gravity_scale = 1.0
 
 [node name="Crate" parent="." instance=ExtResource("4_onmak")]
 position = Vector2(400, 448)
+gravity_scale = 1.0
 
 [node name="Tree" type="Sprite2D" parent="."]
 position = Vector2(544, 352)
@@ -63,3 +65,4 @@ texture = ExtResource("5_gwuyb")
 
 [node name="Crate3" parent="." instance=ExtResource("4_onmak")]
 position = Vector2(392, 296)
+gravity_scale = 1.0
